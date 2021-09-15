@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Liste des commandes</title>
+</head>
+<body>
+	<h1>Liste des commande</h1>
+
+	<main>
+		<table>
+			<thead>
+				<tr>
+					<th>Numéro</th>
+					<th>Date</th>
+					<th>Statut</th>
+					<th>Nom du client</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach ($orders as $order): ?>
+					<tr>
+			<!--6. Mettre en place un lien sur le numéro de la commande (dans le tableau html)
+			//  Ce lien envoie vers la page de détail (*detail.php*) de la commande (dans laquelle on affichera les infos du client et la liste des articles commandés) -->
+						<td><a href="detail.php?orderId=<?= $order['orderNumber'] ?>"><?= $order['orderNumber'] ?></a></td>
+						<td><?= $order['orderDate'] ?></td>
+						<td><?= $order['status'] ?></td>
+						<td><?= $order['customerName'] ?></td>
+					</tr>
+				<?php endforeach ?>
+			</tbody>	
+		</table>
+	</main>
+	
+</body>
+</html>
